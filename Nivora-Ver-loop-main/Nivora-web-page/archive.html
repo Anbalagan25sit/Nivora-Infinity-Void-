@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Nivora - Archive</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#b1c5ff",
+                        "tertiary": "#ffb59e",
+                        "outline-variant": "#434653",
+                        "background": "#131313",
+                        "on-primary-container": "#beceff",
+                        "surface-container-high": "#2a2a2a",
+                        "on-surface-variant": "#c3c6d6",
+                        "surface-variant": "#353535",
+                        "on-surface": "#e5e2e1",
+                        "surface-container-highest": "#353535",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface-container-low": "#1b1c1c",
+                        "on-primary": "#002c71",
+                        "primary-container": "#0051c3",
+                        "surface-container": "#202020",
+                    },
+                    fontFamily: {
+                        "headline": ["Noto Serif"],
+                        "body": ["Inter"],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .scale-98:active { transform: scale(0.98); }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #353535; border-radius: 10px; }
+        .gradient-cta { background: linear-gradient(135deg, #b1c5ff 0%, #0051c3 100%); }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body overflow-hidden">
+    <!-- SideNavBar -->
+    <aside class="fixed left-0 top-0 bottom-0 z-40 px-6 py-8 h-screen w-72 flex flex-col bg-[#1B1C1C]">
+        <div class="mb-12">
+            <a href="index.html">
+                <h1 class="font-serif text-2xl italic text-[#B1C5FF]">Nivora</h1>
+                <p class="text-xs tracking-widest text-on-surface-variant/60 mt-1 uppercase">Intelligent Sophistication</p>
+            </a>
+        </div>
+        <nav class="flex-1 space-y-2">
+            <a href="chat.html" class="w-full flex items-center gap-4 px-4 py-3 text-gray-400 hover:text-gray-200 transition-all duration-500 hover:bg-[#202020] rounded-lg group scale-98">
+                <span class="material-symbols-outlined text-xl">add_circle</span>
+                <span class="font-serif text-lg tracking-tight">New Chat</span>
+            </a>
+            <a href="library.html" class="w-full flex items-center gap-4 px-4 py-3 text-gray-400 hover:text-gray-200 transition-all duration-500 hover:bg-[#202020] rounded-lg group scale-98">
+                <span class="material-symbols-outlined text-xl">auto_stories</span>
+                <span class="font-serif text-lg tracking-tight">Library</span>
+            </a>
+            <a href="archive.html" class="w-full flex items-center gap-4 px-4 py-3 text-[#B1C5FF] bg-[#202020] rounded-lg font-medium transition-all duration-500 scale-98">
+                <span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">history</span>
+                <span class="font-serif text-lg tracking-tight">Archive</span>
+            </a>
+            <a href="settings.html" class="w-full flex items-center gap-4 px-4 py-3 text-gray-400 hover:text-gray-200 transition-all duration-500 hover:bg-[#202020] rounded-lg group scale-98">
+                <span class="material-symbols-outlined text-xl">settings</span>
+                <span class="font-serif text-lg tracking-tight">Settings</span>
+            </a>
+        </nav>
+        <div class="pt-8 mt-8 border-t border-white/5 space-y-6">
+            <a href="pricing.html" class="block p-4 rounded-xl bg-gradient-to-br from-primary-container to-[#002c71] text-white">
+                <p class="text-sm font-medium">Upgrade to Pro</p>
+                <p class="text-xs text-primary-fixed/80 mt-1 leading-relaxed">Access sophisticated neural models.</p>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <div class="ml-72 flex flex-col h-screen">
+        <!-- TopNavBar -->
+        <header class="flex justify-between items-center w-full px-12 h-20 bg-transparent backdrop-blur-xl z-30 shadow-[0px_8px_32px_rgba(0,0,0,0.4)]">
+            <div class="flex items-center flex-1 max-w-xl">
+                <div class="relative w-full">
+                    <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg">search</span>
+                    <input class="w-full bg-surface-container border-none rounded-full py-2.5 pl-12 pr-6 text-sm focus:ring-1 focus:ring-primary/30 placeholder-on-surface-variant/40" placeholder="Search archive..." type="text"/>
+                </div>
+            </div>
+            <div class="flex items-center gap-6 ml-8">
+                <button class="text-on-surface-variant hover:text-white transition-opacity">
+                    <span class="material-symbols-outlined text-2xl">notifications</span>
+                </button>
+                <div class="flex items-center gap-3">
+                    <div class="text-right">
+                        <p class="text-sm font-medium">Julian Thorne</p>
+                        <p class="text-[10px] text-on-surface-variant uppercase tracking-widest">Premium Curator</p>
+                    </div>
+                    <img alt="User profile" class="w-10 h-10 rounded-full object-cover border border-primary/20" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face"/>
+                </div>
+            </div>
+        </header>
+
+        <!-- Archive Content -->
+        <main class="flex-1 overflow-y-auto px-12 py-10 custom-scrollbar">
+            <header class="mb-12">
+                <h2 class="font-serif text-4xl font-bold tracking-tight text-white mb-2">Archive</h2>
+                <p class="text-on-surface-variant font-body italic">Conversations from the past, preserved for reflection.</p>
+            </header>
+
+            <!-- Filters -->
+            <div class="flex items-center gap-4 mb-10">
+                <button class="px-4 py-2 bg-primary/10 text-primary text-sm rounded-full font-medium">All Time</button>
+                <button class="px-4 py-2 bg-surface-container text-gray-400 hover:text-white text-sm rounded-full transition-colors">2024</button>
+                <button class="px-4 py-2 bg-surface-container text-gray-400 hover:text-white text-sm rounded-full transition-colors">2023</button>
+                <div class="ml-auto flex items-center gap-2">
+                    <span class="text-xs text-gray-500">Sort by:</span>
+                    <select class="bg-surface-container border-none rounded-lg text-sm text-gray-300 py-2 px-4 focus:ring-1 focus:ring-primary/30">
+                        <option>Date (Newest)</option>
+                        <option>Date (Oldest)</option>
+                        <option>Word Count</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Archive by Year -->
+            <section class="mb-12">
+                <div class="flex items-center gap-4 mb-6">
+                    <h3 class="font-serif text-xl text-primary font-medium italic">2024</h3>
+                    <div class="h-[1px] flex-1 bg-gradient-to-r from-outline-variant/30 to-transparent"></div>
+                    <span class="text-xs text-gray-500">156 conversations</span>
+                </div>
+
+                <!-- Month Group -->
+                <div class="mb-8">
+                    <h4 class="text-xs uppercase tracking-widest text-gray-500 font-semibold mb-4 pl-2">February 2024</h4>
+                    <div class="space-y-2">
+                        <a href="chat.html" class="group flex items-center justify-between p-4 bg-surface-container-low hover:bg-surface-container rounded-xl transition-all">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                                    <span class="material-symbols-outlined text-xl">psychology</span>
+                                </div>
+                                <div>
+                                    <h5 class="font-medium group-hover:text-primary transition-colors">Quantum Mechanics and Consciousness</h5>
+                                    <p class="text-xs text-gray-500">Feb 28 &bull; 3.2k words &bull; Philosophy</p>
+                                </div>
+                            </div>
+                            <span class="material-symbols-outlined text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward</span>
+                        </a>
+
+                        <a href="chat.html" class="group flex items-center justify-between p-4 bg-surface-container-low hover:bg-surface-container rounded-xl transition-all">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-lg bg-tertiary/10 flex items-center justify-center text-tertiary">
+                                    <span class="material-symbols-outlined text-xl">code</span>
+                                </div>
+                                <div>
+                                    <h5 class="font-medium group-hover:text-primary transition-colors">Rust Memory Management Deep Dive</h5>
+                                    <p class="text-xs text-gray-500">Feb 25 &bull; 1.8k words &bull; Technology</p>
+                                </div>
+                            </div>
+                            <span class="material-symbols-outlined text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward</span>
+                        </a>
+
+                        <a href="chat.html" class="group flex items-center justify-between p-4 bg-surface-container-low hover:bg-surface-container rounded-xl transition-all">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400">
+                                    <span class="material-symbols-outlined text-xl">eco</span>
+                                </div>
+                                <div>
+                                    <h5 class="font-medium group-hover:text-primary transition-colors">Sustainable Architecture Principles</h5>
+                                    <p class="text-xs text-gray-500">Feb 20 &bull; 2.4k words &bull; Design</p>
+                                </div>
+                            </div>
+                            <span class="material-symbols-outlined text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Month Group -->
+                <div class="mb-8">
+                    <h4 class="text-xs uppercase tracking-widest text-gray-500 font-semibold mb-4 pl-2">January 2024</h4>
+                    <div class="space-y-2">
+                        <a href="chat.html" class="group flex items-center justify-between p-4 bg-surface-container-low hover:bg-surface-container rounded-xl transition-all">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-lg bg-violet-500/10 flex items-center justify-center text-violet-400">
+                                    <span class="material-symbols-outlined text-xl">palette</span>
+                                </div>
+                                <div>
+                                    <h5 class="font-medium group-hover:text-primary transition-colors">Color Theory in Film Noir</h5>
+                                    <p class="text-xs text-gray-500">Jan 30 &bull; 2.1k words &bull; Art</p>
+                                </div>
+                            </div>
+                            <span class="material-symbols-outlined text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward</span>
+                        </a>
+
+                        <a href="chat.html" class="group flex items-center justify-between p-4 bg-surface-container-low hover:bg-surface-container rounded-xl transition-all">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-400">
+                                    <span class="material-symbols-outlined text-xl">history_edu</span>
+                                </div>
+                                <div>
+                                    <h5 class="font-medium group-hover:text-primary transition-colors">The Fall of the Roman Republic</h5>
+                                    <p class="text-xs text-gray-500">Jan 22 &bull; 4.5k words &bull; History</p>
+                                </div>
+                            </div>
+                            <span class="material-symbols-outlined text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2023 Section -->
+            <section class="mb-12">
+                <div class="flex items-center gap-4 mb-6">
+                    <h3 class="font-serif text-xl text-on-surface-variant/60 font-medium italic">2023</h3>
+                    <div class="h-[1px] flex-1 bg-gradient-to-r from-outline-variant/30 to-transparent"></div>
+                    <span class="text-xs text-gray-500">89 conversations</span>
+                </div>
+
+                <div class="mb-8">
+                    <h4 class="text-xs uppercase tracking-widest text-gray-500 font-semibold mb-4 pl-2">December 2023</h4>
+                    <div class="space-y-2">
+                        <a href="chat.html" class="group flex items-center justify-between p-4 bg-surface-container-low hover:bg-surface-container rounded-xl transition-all">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                                    <span class="material-symbols-outlined text-xl">book</span>
+                                </div>
+                                <div>
+                                    <h5 class="font-medium group-hover:text-primary transition-colors">Narrative Structure in Dostoevsky</h5>
+                                    <p class="text-xs text-gray-500">Dec 28 &bull; 3.8k words &bull; Literature</p>
+                                </div>
+                            </div>
+                            <span class="material-symbols-outlined text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward</span>
+                        </a>
+
+                        <a href="chat.html" class="group flex items-center justify-between p-4 bg-surface-container-low hover:bg-surface-container rounded-xl transition-all">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400">
+                                    <span class="material-symbols-outlined text-xl">science</span>
+                                </div>
+                                <div>
+                                    <h5 class="font-medium group-hover:text-primary transition-colors">CRISPR Ethics Debate</h5>
+                                    <p class="text-xs text-gray-500">Dec 15 &bull; 2.9k words &bull; Science</p>
+                                </div>
+                            </div>
+                            <span class="material-symbols-outlined text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="mt-12 py-8 flex flex-col items-center border-t border-white/5">
+                <button class="bg-surface-container hover:bg-surface-container-high text-primary font-medium px-8 py-3 rounded-full transition-all duration-500 scale-98">
+                    Load More Archives
+                </button>
+                <p class="mt-4 text-xs text-on-surface-variant/40 italic">Showing 245 of 892 archived conversations</p>
+            </footer>
+        </main>
+    </div>
+</body>
+</html>

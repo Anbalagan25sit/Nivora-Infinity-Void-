@@ -1,0 +1,535 @@
+/* Nivora Chrome Extension - Content Styles */
+/* Perplexity Comet-like Voice Assistant UI */
+
+#nivora-assistant-container {
+  --nivora-primary: #2dd4bf;
+  --nivora-primary-dark: #14b8a6;
+  --nivora-secondary: #9333ea;
+  --nivora-bg: #1a1a2e;
+  --nivora-bg-dark: #0f0f1a;
+  --nivora-bg-light: #252547;
+  --nivora-text: #e5e5e5;
+  --nivora-text-muted: #a1a1aa;
+  --nivora-border: rgba(255, 255, 255, 0.1);
+  --nivora-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  --nivora-radius: 16px;
+  --nivora-radius-sm: 8px;
+
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--nivora-text);
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 2147483647;
+}
+
+#nivora-assistant-container * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Floating Action Button */
+.nivora-fab {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--nivora-primary), var(--nivora-secondary));
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--nivora-shadow);
+  transition: all 0.3s ease;
+  animation: nivora-pulse 2s infinite;
+}
+
+.nivora-fab:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px rgba(45, 212, 191, 0.5);
+}
+
+.nivora-fab svg {
+  width: 24px;
+  height: 24px;
+  color: white;
+}
+
+@keyframes nivora-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(45, 212, 191, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 15px rgba(45, 212, 191, 0);
+  }
+}
+
+/* Main Panel */
+.nivora-panel {
+  width: 380px;
+  max-height: 600px;
+  background: var(--nivora-bg);
+  border-radius: var(--nivora-radius);
+  box-shadow: var(--nivora-shadow);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--nivora-border);
+  backdrop-filter: blur(20px);
+}
+
+/* Header */
+.nivora-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: var(--nivora-bg-dark);
+  border-bottom: 1px solid var(--nivora-border);
+  gap: 12px;
+}
+
+.nivora-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--nivora-text);
+}
+
+.nivora-logo svg {
+  width: 24px;
+  height: 24px;
+  color: var(--nivora-primary);
+}
+
+.nivora-connection-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--nivora-text-muted);
+  padding: 4px 10px;
+  background: var(--nivora-bg-light);
+  border-radius: 12px;
+}
+
+.nivora-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ef4444;
+}
+
+.nivora-header-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.nivora-btn-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--nivora-text-muted);
+  transition: all 0.2s ease;
+}
+
+.nivora-btn-icon:hover {
+  background: var(--nivora-bg-light);
+  color: var(--nivora-text);
+}
+
+.nivora-btn-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Transcript Area */
+.nivora-transcript {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  min-height: 200px;
+  max-height: 300px;
+}
+
+.nivora-welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  gap: 16px;
+}
+
+.nivora-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--nivora-bg-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nivora-avatar svg {
+  width: 60px;
+  height: 60px;
+  color: var(--nivora-primary);
+}
+
+.nivora-status {
+  color: var(--nivora-text-muted);
+  font-size: 14px;
+}
+
+/* Messages */
+.nivora-message {
+  margin-bottom: 16px;
+  animation: nivora-fade-in 0.3s ease;
+}
+
+@keyframes nivora-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nivora-message-content {
+  padding: 12px 16px;
+  border-radius: var(--nivora-radius-sm);
+  max-width: 90%;
+}
+
+.nivora-message-user .nivora-message-content {
+  background: var(--nivora-primary);
+  color: var(--nivora-bg-dark);
+  margin-left: auto;
+  border-bottom-right-radius: 4px;
+}
+
+.nivora-message-assistant .nivora-message-content {
+  background: var(--nivora-bg-light);
+  color: var(--nivora-text);
+  border-bottom-left-radius: 4px;
+}
+
+.nivora-message-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 4px;
+}
+
+.nivora-message-user .nivora-message-label {
+  text-align: right;
+}
+
+.nivora-system-message {
+  text-align: center;
+  color: var(--nivora-text-muted);
+  font-size: 12px;
+  padding: 8px;
+  background: var(--nivora-bg-dark);
+  border-radius: var(--nivora-radius-sm);
+}
+
+/* Audio Visualizer */
+.nivora-visualizer-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: var(--nivora-bg-dark);
+}
+
+#nivora-visualizer {
+  width: 150px;
+  height: 150px;
+}
+
+/* Controls */
+.nivora-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 16px;
+  background: var(--nivora-bg-dark);
+}
+
+.nivora-control-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.nivora-mic-btn {
+  background: var(--nivora-bg-light);
+  color: var(--nivora-text);
+  border: 2px solid var(--nivora-border);
+}
+
+.nivora-mic-btn:hover {
+  background: var(--nivora-primary);
+  color: var(--nivora-bg-dark);
+  border-color: var(--nivora-primary);
+}
+
+.nivora-mic-btn.listening {
+  background: var(--nivora-primary);
+  color: var(--nivora-bg-dark);
+  border-color: var(--nivora-primary);
+  animation: nivora-listening-pulse 1.5s infinite;
+}
+
+.nivora-connect-btn {
+  background: linear-gradient(135deg, var(--nivora-primary), var(--nivora-secondary));
+  color: white;
+  border: none;
+}
+
+.nivora-connect-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(45, 212, 191, 0.4);
+}
+
+@keyframes nivora-listening-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(45, 212, 191, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 20px rgba(45, 212, 191, 0);
+  }
+}
+
+.nivora-cancel-btn {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+  border: 2px solid rgba(239, 68, 68, 0.3);
+}
+
+.nivora-cancel-btn:hover {
+  background: #ef4444;
+  color: white;
+  border-color: #ef4444;
+}
+
+.nivora-control-btn svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Input Area */
+.nivora-input-container {
+  padding: 16px;
+  background: var(--nivora-bg);
+  border-top: 1px solid var(--nivora-border);
+}
+
+.nivora-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: var(--nivora-bg-light);
+  border-radius: var(--nivora-radius);
+  border: 1px solid var(--nivora-border);
+  transition: all 0.2s ease;
+}
+
+.nivora-input-wrapper:focus-within {
+  border-color: var(--nivora-primary);
+  box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.1);
+}
+
+.nivora-attach-btn,
+.nivora-send-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--nivora-text-muted);
+  transition: all 0.2s ease;
+}
+
+.nivora-attach-btn:hover,
+.nivora-send-btn:hover {
+  color: var(--nivora-primary);
+  background: rgba(45, 212, 191, 0.1);
+}
+
+.nivora-attach-btn svg,
+.nivora-send-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.nivora-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--nivora-text);
+  font-size: 14px;
+  padding: 8px 4px;
+}
+
+.nivora-input::placeholder {
+  color: var(--nivora-text-muted);
+}
+
+/* Settings Modal */
+.nivora-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2147483648;
+  backdrop-filter: blur(4px);
+}
+
+.nivora-modal-content {
+  width: 400px;
+  max-width: 90%;
+  background: var(--nivora-bg);
+  border-radius: var(--nivora-radius);
+  box-shadow: var(--nivora-shadow);
+  overflow: hidden;
+  border: 1px solid var(--nivora-border);
+}
+
+.nivora-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: var(--nivora-bg-dark);
+  border-bottom: 1px solid var(--nivora-border);
+}
+
+.nivora-modal-header h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--nivora-text);
+}
+
+.nivora-modal-body {
+  padding: 20px;
+}
+
+.nivora-form-group {
+  margin-bottom: 16px;
+}
+
+.nivora-form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--nivora-text-muted);
+  margin-bottom: 8px;
+}
+
+.nivora-form-group input {
+  width: 100%;
+  padding: 12px 16px;
+  background: var(--nivora-bg-light);
+  border: 1px solid var(--nivora-border);
+  border-radius: var(--nivora-radius-sm);
+  color: var(--nivora-text);
+  font-size: 14px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.nivora-form-group input:focus {
+  border-color: var(--nivora-primary);
+  box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.1);
+}
+
+.nivora-form-group input::placeholder {
+  color: var(--nivora-text-muted);
+}
+
+.nivora-btn-primary {
+  width: 100%;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, var(--nivora-primary), var(--nivora-primary-dark));
+  color: var(--nivora-bg-dark);
+  border: none;
+  border-radius: var(--nivora-radius-sm);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nivora-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(45, 212, 191, 0.3);
+}
+
+/* Utility Classes */
+.hidden {
+  display: none !important;
+}
+
+/* Scrollbar */
+.nivora-transcript::-webkit-scrollbar {
+  width: 6px;
+}
+
+.nivora-transcript::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.nivora-transcript::-webkit-scrollbar-thumb {
+  background: var(--nivora-bg-light);
+  border-radius: 3px;
+}
+
+.nivora-transcript::-webkit-scrollbar-thumb:hover {
+  background: var(--nivora-text-muted);
+}
+
+/* Responsive */
+@media (max-width: 420px) {
+  .nivora-panel {
+    width: calc(100vw - 40px);
+    max-height: calc(100vh - 100px);
+  }
+}

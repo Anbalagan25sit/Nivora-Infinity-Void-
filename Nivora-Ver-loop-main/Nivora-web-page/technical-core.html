@@ -1,0 +1,288 @@
+<!-- Nivora - Technical Core & Voice Stack -->
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Nivora AI | Technical Core</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-dim": "#131313",
+                        "secondary-container": "#434a51",
+                        "on-primary-fixed": "#001947",
+                        "error": "#ffb4ab",
+                        "inverse-primary": "#1357c9",
+                        "outline-variant": "#434653",
+                        "on-tertiary-fixed": "#390b00",
+                        "on-primary-fixed-variant": "#00419f",
+                        "surface-container-highest": "#353535",
+                        "surface": "#131313",
+                        "primary": "#b1c5ff",
+                        "secondary-fixed": "#dce3ec",
+                        "surface-container-high": "#2a2a2a",
+                        "tertiary-fixed": "#ffdbd0",
+                        "on-error": "#690005",
+                        "error-container": "#93000a",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-secondary-container": "#b2b9c1",
+                        "on-secondary": "#2a3138",
+                        "tertiary-container": "#914024",
+                        "surface-bright": "#393939",
+                        "surface-tint": "#b1c5ff",
+                        "primary-container": "#0051c3",
+                        "surface-container-low": "#1b1c1c",
+                        "inverse-on-surface": "#303030",
+                        "surface-container": "#202020",
+                        "on-primary-container": "#beceff",
+                        "on-tertiary-container": "#ffc1ae",
+                        "inverse-surface": "#e5e2e1",
+                        "on-secondary-fixed": "#151c23",
+                        "background": "#131313",
+                        "on-primary": "#002c71",
+                        "on-secondary-fixed-variant": "#41484f",
+                        "on-tertiary": "#5c1902",
+                        "surface-variant": "#353535",
+                        "on-surface-variant": "#c3c6d6",
+                        "on-background": "#e5e2e1",
+                        "tertiary": "#ffb59e",
+                        "on-surface": "#e5e2e1",
+                        "tertiary-fixed-dim": "#ffb59e",
+                        "outline": "#8d909f"
+                    },
+                    fontFamily: {
+                        "headline": ["Noto Serif"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            font-family: 'Inter', sans-serif;
+        }
+        .serif-italic { font-family: 'Noto Serif', serif; font-style: italic; }
+        .glass-panel {
+            background: rgba(32, 32, 32, 0.7);
+            backdrop-filter: blur(20px);
+        }
+        .gradient-primary {
+            background: linear-gradient(135deg, #b1c5ff 0%, #0051c3 100%);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #131313;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #353535;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="flex min-h-screen">
+    <!-- SideNavBar Component -->
+    <aside class="flex flex-col h-screen p-6 gap-8 bg-[#1B1C1C] h-full w-72 left-0 sticky top-0 shrink-0">
+        <div class="flex flex-col gap-1">
+            <div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container mb-2">
+                <img alt="Nivora Core Avatar" class="w-full h-full object-cover" src="assets/nivora-logo.png"/>
+            </div>
+            <h1 class="text-xl font-headline italic text-primary">Nivora AI</h1>
+            <p class="text-[10px] text-gray-500 tracking-[0.2em] uppercase">Technical Core</p>
+        </div>
+
+        <nav class="flex-1 space-y-2">
+            <a class="flex items-center gap-3 px-4 py-3 bg-[#202020] text-[#B1C5FF] rounded-lg transition-all" href="#">
+                <span class="material-symbols-outlined text-sm">memory</span>
+                <span class="font-sans text-sm tracking-wide">System Overview</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-gray-500 hover:bg-[#202020] hover:text-white rounded-lg transition-all" href="#">
+                <span class="material-symbols-outlined text-sm">settings_voice</span>
+                <span class="font-sans text-sm tracking-wide">Voice Stack</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-gray-500 hover:bg-[#202020] hover:text-white rounded-lg transition-all" href="#">
+                <span class="material-symbols-outlined text-sm">psychology</span>
+                <span class="font-sans text-sm tracking-wide">Neural Config</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-gray-500 hover:bg-[#202020] hover:text-white rounded-lg transition-all" href="#">
+                <span class="material-symbols-outlined text-sm">speed</span>
+                <span class="font-sans text-sm tracking-wide">Performance</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-gray-500 hover:bg-[#202020] hover:text-white rounded-lg transition-all" href="#">
+                <span class="material-symbols-outlined text-sm">terminal</span>
+                <span class="font-sans text-sm tracking-wide">API Console</span>
+            </a>
+        </nav>
+
+        <div class="pt-6 border-t border-white/5 space-y-2">
+            <a class="flex items-center gap-3 px-4 py-2 text-gray-500 hover:text-white text-xs cursor-pointer" href="#">
+                <span class="material-symbols-outlined text-base">menu_book</span>
+                <span>Documentation</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-2 text-gray-500 hover:text-white text-xs cursor-pointer" href="#">
+                <span class="material-symbols-outlined text-base">help</span>
+                <span>Support</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="flex-1 overflow-y-auto custom-scrollbar">
+        <!-- Header -->
+        <header class="sticky top-0 z-40 bg-[#131313]/90 backdrop-blur-xl px-12 py-6 flex justify-between items-center border-b border-outline-variant/10">
+            <div>
+                <h1 class="text-3xl font-headline italic text-primary">Technical Core</h1>
+                <p class="text-sm text-on-surface-variant mt-1">System architecture and voice configuration</p>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="flex items-center gap-2 px-4 py-2 bg-surface-container rounded-full">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span class="text-xs text-on-surface-variant">All Systems Operational</span>
+                </div>
+                <button class="p-2 rounded-full hover:bg-surface-container transition-colors">
+                    <span class="material-symbols-outlined text-on-surface-variant">settings</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Content -->
+        <div class="px-12 py-12 max-w-6xl">
+            <!-- Voice Stack Section -->
+            <section class="mb-16">
+                <div class="flex items-baseline gap-4 mb-8">
+                    <h2 class="text-2xl font-headline italic text-primary">Voice Stack</h2>
+                    <span class="h-px flex-1 bg-surface-container-high"></span>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- TTS Configuration -->
+                    <div class="bg-surface-container-low rounded-xl p-8">
+                        <div class="flex items-center gap-3 mb-6">
+                            <span class="material-symbols-outlined text-primary">record_voice_over</span>
+                            <h3 class="text-lg font-headline italic">Text-to-Speech Engine</h3>
+                        </div>
+                        <div class="space-y-6">
+                            <div>
+                                <label class="text-xs text-on-surface-variant uppercase tracking-widest mb-2 block">Voice Model</label>
+                                <select class="w-full bg-surface-container border border-outline-variant/20 rounded-lg px-4 py-3 text-on-surface focus:ring-primary focus:border-primary">
+                                    <option>Nivora Serene (Default)</option>
+                                    <option>Nivora Professional</option>
+                                    <option>Nivora Warm</option>
+                                    <option>Custom Voice Clone</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="text-xs text-on-surface-variant uppercase tracking-widest mb-2 block">Speech Rate</label>
+                                <input type="range" class="w-full accent-primary" min="0.5" max="2" step="0.1" value="1"/>
+                                <div class="flex justify-between text-xs text-outline mt-1">
+                                    <span>Slow</span>
+                                    <span>Normal</span>
+                                    <span>Fast</span>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="text-xs text-on-surface-variant uppercase tracking-widest mb-2 block">Pitch Adjustment</label>
+                                <input type="range" class="w-full accent-primary" min="-10" max="10" step="1" value="0"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- STT Configuration -->
+                    <div class="bg-surface-container-low rounded-xl p-8">
+                        <div class="flex items-center gap-3 mb-6">
+                            <span class="material-symbols-outlined text-primary">hearing</span>
+                            <h3 class="text-lg font-headline italic">Speech Recognition</h3>
+                        </div>
+                        <div class="space-y-6">
+                            <div>
+                                <label class="text-xs text-on-surface-variant uppercase tracking-widest mb-2 block">Recognition Model</label>
+                                <select class="w-full bg-surface-container border border-outline-variant/20 rounded-lg px-4 py-3 text-on-surface focus:ring-primary focus:border-primary">
+                                    <option>Whisper Large V3</option>
+                                    <option>Whisper Medium</option>
+                                    <option>Real-time Streaming</option>
+                                </select>
+                            </div>
+                            <div class="flex items-center justify-between py-3 border-b border-outline-variant/10">
+                                <div>
+                                    <p class="text-sm font-medium">Noise Suppression</p>
+                                    <p class="text-xs text-on-surface-variant">Enhanced clarity in noisy environments</p>
+                                </div>
+                                <button class="w-12 h-6 bg-primary rounded-full relative">
+                                    <div class="w-5 h-5 bg-on-primary rounded-full absolute right-0.5 top-0.5"></div>
+                                </button>
+                            </div>
+                            <div class="flex items-center justify-between py-3">
+                                <div>
+                                    <p class="text-sm font-medium">Wake Word Detection</p>
+                                    <p class="text-xs text-on-surface-variant">"Hey Nivora" activation</p>
+                                </div>
+                                <button class="w-12 h-6 bg-surface-container-highest rounded-full relative">
+                                    <div class="w-5 h-5 bg-on-surface-variant rounded-full absolute left-0.5 top-0.5"></div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- System Metrics -->
+            <section class="mb-16">
+                <div class="flex items-baseline gap-4 mb-8">
+                    <h2 class="text-2xl font-headline italic text-primary">System Metrics</h2>
+                    <span class="h-px flex-1 bg-surface-container-high"></span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                    <div class="bg-surface-container rounded-xl p-6">
+                        <span class="material-symbols-outlined text-primary mb-4">speed</span>
+                        <p class="text-3xl font-bold mb-1">240ms</p>
+                        <p class="text-xs text-on-surface-variant uppercase tracking-wider">Avg. Latency</p>
+                    </div>
+                    <div class="bg-surface-container rounded-xl p-6">
+                        <span class="material-symbols-outlined text-emerald-400 mb-4">trending_up</span>
+                        <p class="text-3xl font-bold mb-1">99.8%</p>
+                        <p class="text-xs text-on-surface-variant uppercase tracking-wider">Uptime</p>
+                    </div>
+                    <div class="bg-surface-container rounded-xl p-6">
+                        <span class="material-symbols-outlined text-tertiary mb-4">memory</span>
+                        <p class="text-3xl font-bold mb-1">2.4GB</p>
+                        <p class="text-xs text-on-surface-variant uppercase tracking-wider">Memory Usage</p>
+                    </div>
+                    <div class="bg-surface-container rounded-xl p-6">
+                        <span class="material-symbols-outlined text-primary mb-4">analytics</span>
+                        <p class="text-3xl font-bold mb-1">14.2K</p>
+                        <p class="text-xs text-on-surface-variant uppercase tracking-wider">API Calls/Day</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Action Buttons -->
+            <div class="flex gap-4">
+                <button class="gradient-primary px-8 py-3 rounded-lg text-on-primary font-medium transition-all hover:opacity-90 active:scale-95">
+                    Save Configuration
+                </button>
+                <button class="bg-surface-container px-8 py-3 rounded-lg text-on-surface font-medium border border-outline-variant/20 hover:bg-surface-container-high transition-colors">
+                    Reset to Defaults
+                </button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

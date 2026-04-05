@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nivora Settings</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 350px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #1a1a2e;
+      color: #e5e5e5;
+      padding: 20px;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .logo {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #2dd4bf, #9333ea);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo svg {
+      width: 24px;
+      height: 24px;
+      color: white;
+    }
+
+    .title {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .subtitle {
+      font-size: 12px;
+      color: #a1a1aa;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      color: #a1a1aa;
+      margin-bottom: 8px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      background: #252547;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      color: #e5e5e5;
+      font-size: 13px;
+      outline: none;
+      transition: all 0.2s;
+    }
+
+    input:focus {
+      border-color: #2dd4bf;
+      box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.1);
+    }
+
+    input::placeholder {
+      color: #71717a;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(135deg, #2dd4bf, #14b8a6);
+      color: #0f0f1a;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-top: 8px;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(45, 212, 191, 0.3);
+    }
+
+    .btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .btn-secondary {
+      background: #252547;
+      color: #e5e5e5;
+      margin-top: 12px;
+    }
+
+    .btn-secondary:hover {
+      background: #2f2f5a;
+      box-shadow: none;
+    }
+
+    .status {
+      margin-top: 16px;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 13px;
+      display: none;
+    }
+
+    .status.success {
+      display: block;
+      background: rgba(45, 212, 191, 0.1);
+      color: #2dd4bf;
+      border: 1px solid rgba(45, 212, 191, 0.3);
+    }
+
+    .status.error {
+      display: block;
+      background: rgba(239, 68, 68, 0.1);
+      color: #ef4444;
+      border: 1px solid rgba(239, 68, 68, 0.3);
+    }
+
+    .info {
+      margin-top: 16px;
+      padding: 12px;
+      background: rgba(147, 51, 234, 0.1);
+      border-radius: 8px;
+      font-size: 12px;
+      color: #a78bfa;
+    }
+
+    .info strong {
+      color: #c4b5fd;
+    }
+
+    .shortcut {
+      display: inline-block;
+      padding: 2px 6px;
+      background: #252547;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 11px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/>
+        <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+        <line x1="12" y1="19" x2="12" y2="22"/>
+      </svg>
+    </div>
+    <div>
+      <div class="title">Nivora Assistant</div>
+      <div class="subtitle">Voice AI powered by LiveKit</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="livekit-url">LiveKit Server URL</label>
+    <input type="text" id="livekit-url" placeholder="wss://your-server.livekit.cloud" value="wss://nivora-5opea2lo.livekit.cloud">
+  </div>
+
+  <div class="form-group">
+    <label for="api-endpoint">Token API Endpoint</label>
+    <input type="text" id="api-endpoint" placeholder="http://localhost:8080/api/token" value="http://localhost:8080/api/token">
+  </div>
+
+  <button class="btn" id="save-btn">Save Settings</button>
+  <button class="btn btn-secondary" id="test-btn">Test Connection</button>
+
+  <div class="status" id="status"></div>
+
+  <div class="info">
+    <strong>Quick Tips:</strong><br>
+    • Press <span class="shortcut">Alt+N</span> to toggle assistant<br>
+    • Click the mic button on any page to start<br>
+    • Use + button to include page context
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

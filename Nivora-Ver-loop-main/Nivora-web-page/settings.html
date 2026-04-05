@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Nivora - Settings</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#b1c5ff",
+                        "tertiary": "#ffb59e",
+                        "outline-variant": "#434653",
+                        "background": "#131313",
+                        "on-primary-container": "#beceff",
+                        "surface-container-high": "#2a2a2a",
+                        "on-surface-variant": "#c3c6d6",
+                        "surface-variant": "#353535",
+                        "on-surface": "#e5e2e1",
+                        "surface-container-highest": "#353535",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface-container-low": "#1b1c1c",
+                        "on-primary": "#002c71",
+                        "primary-container": "#0051c3",
+                        "surface-container": "#202020",
+                        "error": "#ffb4ab",
+                    },
+                    fontFamily: {
+                        "headline": ["Noto Serif"],
+                        "body": ["Inter"],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #131313; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #353535; border-radius: 10px; }
+        .scale-98:active { transform: scale(0.98); }
+        .gradient-cta { background: linear-gradient(135deg, #b1c5ff 0%, #0051c3 100%); }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary/30 antialiased">
+    <!-- SideNavBar -->
+    <aside class="fixed left-0 top-0 bottom-0 z-40 px-6 py-8 h-screen w-72 flex flex-col bg-[#1B1C1C]">
+        <div class="mb-10">
+            <a href="index.html">
+                <h1 class="font-serif text-2xl italic text-[#B1C5FF]">Nivora</h1>
+                <p class="font-serif text-sm tracking-tight text-gray-500 mt-1">Intelligent Sophistication</p>
+            </a>
+        </div>
+        <nav class="flex-1 space-y-2">
+            <a class="flex items-center gap-3 px-4 py-3 text-gray-400 hover:text-gray-200 transition-colors rounded-lg hover:bg-[#202020]" href="chat.html">
+                <span class="material-symbols-outlined">add_circle</span>
+                <span class="font-serif text-lg tracking-tight">New Chat</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-gray-400 hover:text-gray-200 transition-colors rounded-lg hover:bg-[#202020]" href="library.html">
+                <span class="material-symbols-outlined">auto_stories</span>
+                <span class="font-serif text-lg tracking-tight">Library</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-gray-400 hover:text-gray-200 transition-colors rounded-lg hover:bg-[#202020]" href="archive.html">
+                <span class="material-symbols-outlined">history</span>
+                <span class="font-serif text-lg tracking-tight">Archive</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-[#B1C5FF] bg-[#202020] rounded-lg font-medium" href="settings.html">
+                <span class="material-symbols-outlined">settings</span>
+                <span class="font-serif text-lg tracking-tight">Settings</span>
+            </a>
+        </nav>
+        <div class="mt-auto space-y-4">
+            <a href="pricing.html" class="block w-full py-4 px-4 gradient-cta text-on-primary font-medium rounded-lg text-sm text-center scale-98 transition-transform">
+                Upgrade to Pro
+            </a>
+            <div class="space-y-1">
+                <a class="flex items-center gap-3 px-4 py-2 text-gray-400 hover:text-gray-200 text-sm" href="#">
+                    <span class="material-symbols-outlined text-lg">help_outline</span>
+                    <span>Help</span>
+                </a>
+                <a class="flex items-center gap-3 px-4 py-2 text-gray-400 hover:text-gray-200 text-sm" href="#">
+                    <span class="material-symbols-outlined text-lg">chat_bubble_outline</span>
+                    <span>Feedback</span>
+                </a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- TopNavBar -->
+    <header class="flex justify-between items-center w-full px-12 h-20 ml-72 fixed top-0 right-0 left-0 z-30 bg-transparent backdrop-blur-xl">
+        <div class="flex items-center gap-4">
+            <div class="relative group">
+                <span class="absolute inset-y-0 left-3 flex items-center text-gray-500">
+                    <span class="material-symbols-outlined text-xl">search</span>
+                </span>
+                <input class="bg-surface-container border-none rounded-full pl-10 pr-4 py-2 text-sm w-64 focus:ring-1 focus:ring-primary/30 transition-all outline-none" placeholder="Search settings..." type="text"/>
+            </div>
+        </div>
+        <div class="flex items-center gap-6">
+            <button class="text-gray-400 hover:text-white transition-opacity">
+                <span class="material-symbols-outlined">notifications</span>
+            </button>
+            <div class="flex items-center gap-3">
+                <span class="text-sm font-medium text-gray-300">Julian Voss</span>
+                <img class="w-10 h-10 rounded-full object-cover" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" alt="Profile"/>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="ml-72 pt-32 px-12 pb-24 max-w-6xl overflow-y-auto custom-scrollbar">
+        <header class="mb-12">
+            <h2 class="font-headline text-4xl font-semibold mb-2 text-on-surface">Settings</h2>
+            <p class="text-on-surface-variant font-body">Manage your intellectual environment and digital preferences.</p>
+        </header>
+
+        <div class="space-y-16">
+            <!-- Profile Section -->
+            <section class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start" id="profile">
+                <div class="space-y-2">
+                    <h3 class="font-headline text-xl text-primary">Profile</h3>
+                    <p class="text-sm text-on-surface-variant">Your public identity and contact information.</p>
+                </div>
+                <div class="md:col-span-2 space-y-6">
+                    <div class="p-8 bg-surface-container rounded-xl">
+                        <div class="flex items-center gap-8 mb-8">
+                            <div class="relative group">
+                                <img class="w-24 h-24 rounded-full object-cover border-2 border-surface-container-highest" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face" alt="Profile"/>
+                                <button class="absolute bottom-0 right-0 p-2 bg-primary text-on-primary rounded-full shadow-lg">
+                                    <span class="material-symbols-outlined text-sm">edit</span>
+                                </button>
+                            </div>
+                            <div class="space-y-1">
+                                <h4 class="text-lg font-medium">Julian Voss</h4>
+                                <p class="text-sm text-on-surface-variant">Senior Research Analyst</p>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="text-xs uppercase tracking-widest text-on-surface-variant font-semibold">Display Name</label>
+                                <input class="w-full bg-surface-container-low border-none rounded-lg p-4 focus:ring-1 focus:ring-primary/30 transition-all text-on-surface" type="text" value="Julian Voss"/>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-xs uppercase tracking-widest text-on-surface-variant font-semibold">Email Address</label>
+                                <input class="w-full bg-surface-container-low border-none rounded-lg p-4 focus:ring-1 focus:ring-primary/30 transition-all text-on-surface" type="email" value="julian.voss@nivora.io"/>
+                            </div>
+                            <div class="md:col-span-2 space-y-2">
+                                <label class="text-xs uppercase tracking-widest text-on-surface-variant font-semibold">Professional Bio</label>
+                                <textarea class="w-full bg-surface-container-low border-none rounded-lg p-4 focus:ring-1 focus:ring-primary/30 transition-all text-on-surface resize-none" rows="3">Exploring the intersection of artificial intelligence and high-level strategic research.</textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Subscription Section -->
+            <section class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start" id="subscription">
+                <div class="space-y-2">
+                    <h3 class="font-headline text-xl text-primary">Subscription</h3>
+                    <p class="text-sm text-on-surface-variant">Manage your membership tier and billing.</p>
+                </div>
+                <div class="md:col-span-2">
+                    <div class="relative overflow-hidden p-8 bg-surface-container-low rounded-xl border border-outline-variant/10">
+                        <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-[80px] rounded-full -mr-20 -mt-20"></div>
+                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-8 relative z-10">
+                            <div>
+                                <span class="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-[10px] uppercase tracking-widest font-bold mb-3">Current Plan</span>
+                                <h4 class="text-2xl font-serif font-semibold italic">Nivora Pro Elite</h4>
+                                <p class="text-sm text-on-surface-variant mt-1">Billed annually &bull; Next renewal: Oct 12, 2024</p>
+                            </div>
+                            <a href="pricing.html" class="px-6 py-2 border border-primary/30 text-primary rounded-full hover:bg-primary/5 transition-colors text-sm font-medium">Manage Plan</a>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 relative z-10">
+                            <div class="p-4 bg-surface-container rounded-lg">
+                                <p class="text-xs text-on-surface-variant mb-1">Compute Usage</p>
+                                <p class="text-xl font-semibold">82%</p>
+                                <div class="w-full bg-surface-container-highest h-1 mt-3 rounded-full overflow-hidden">
+                                    <div class="bg-primary h-full w-[82%]"></div>
+                                </div>
+                            </div>
+                            <div class="p-4 bg-surface-container rounded-lg">
+                                <p class="text-xs text-on-surface-variant mb-1">Tokens/Month</p>
+                                <p class="text-xl font-semibold">1.2M</p>
+                                <p class="text-[10px] text-primary mt-3 uppercase tracking-tighter">Unlimited Priority</p>
+                            </div>
+                            <div class="p-4 bg-surface-container rounded-lg">
+                                <p class="text-xs text-on-surface-variant mb-1">Payment Method</p>
+                                <div class="flex items-center gap-2 mt-1">
+                                    <span class="material-symbols-outlined text-on-surface-variant">credit_card</span>
+                                    <p class="text-sm font-medium">&bull;&bull;&bull;&bull; 4242</p>
+                                </div>
+                                <p class="text-[10px] text-on-surface-variant mt-2">Expires 08/26</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Model Settings Section -->
+            <section class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start" id="model">
+                <div class="space-y-2">
+                    <h3 class="font-headline text-xl text-primary">Model Settings</h3>
+                    <p class="text-sm text-on-surface-variant">Configure the core intelligence driving your interactions.</p>
+                </div>
+                <div class="md:col-span-2 space-y-6">
+                    <div class="p-8 bg-surface-container rounded-xl space-y-8">
+                        <div class="space-y-4">
+                            <label class="text-xs uppercase tracking-widest text-on-surface-variant font-semibold">Active Intelligence Model</label>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <button class="text-left p-4 rounded-lg bg-surface-container-highest border-2 border-primary/50 flex items-center justify-between">
+                                    <div>
+                                        <p class="font-semibold text-primary">Claude 3.5 Sonnet</p>
+                                        <p class="text-[10px] text-on-surface-variant">Fast, intelligent, balanced</p>
+                                    </div>
+                                    <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                </button>
+                                <button class="text-left p-4 rounded-lg bg-surface-container-low hover:bg-surface-container-highest border-2 border-transparent transition-all flex items-center justify-between">
+                                    <div>
+                                        <p class="font-semibold">GPT-4o</p>
+                                        <p class="text-[10px] text-on-surface-variant">Multimodal, versatile</p>
+                                    </div>
+                                    <div class="w-5 h-5 rounded-full border border-outline-variant"></div>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="space-y-6 pt-4">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h5 class="font-medium">System Context Window</h5>
+                                    <p class="text-xs text-on-surface-variant">Extended memory for complex threads</p>
+                                </div>
+                                <button class="w-12 h-6 bg-primary rounded-full relative flex items-center px-1">
+                                    <div class="w-4 h-4 bg-on-primary rounded-full ml-auto"></div>
+                                </button>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h5 class="font-medium">Creative Variance (Temperature)</h5>
+                                    <p class="text-xs text-on-surface-variant">Adjust the predictability of responses</p>
+                                </div>
+                                <div class="w-32 h-1 bg-surface-container-highest rounded-full relative">
+                                    <div class="absolute left-1/2 top-1/2 -translate-y-1/2 w-3 h-3 bg-primary rounded-full cursor-pointer"></div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h5 class="font-medium">Experimental Features</h5>
+                                    <p class="text-xs text-on-surface-variant">Access beta tools and models</p>
+                                </div>
+                                <button class="w-12 h-6 bg-surface-container-highest rounded-full relative flex items-center px-1">
+                                    <div class="w-4 h-4 bg-on-surface-variant rounded-full"></div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Privacy Section -->
+            <section class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start pb-12" id="privacy">
+                <div class="space-y-2">
+                    <h3 class="font-headline text-xl text-primary">Privacy</h3>
+                    <p class="text-sm text-on-surface-variant">Control how your data and conversations are managed.</p>
+                </div>
+                <div class="md:col-span-2 space-y-4">
+                    <div class="p-6 bg-surface-container-low rounded-xl flex items-center justify-between hover:bg-surface-container transition-colors cursor-pointer group">
+                        <div class="flex items-center gap-4">
+                            <div class="p-3 bg-surface-container rounded-lg text-primary">
+                                <span class="material-symbols-outlined">history_edu</span>
+                            </div>
+                            <div>
+                                <h5 class="font-medium">Conversation Training</h5>
+                                <p class="text-xs text-on-surface-variant">Use chat history to improve local personalization</p>
+                            </div>
+                        </div>
+                        <span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform">chevron_right</span>
+                    </div>
+                    <div class="p-6 bg-surface-container-low rounded-xl flex items-center justify-between hover:bg-surface-container transition-colors cursor-pointer group">
+                        <div class="flex items-center gap-4">
+                            <div class="p-3 bg-surface-container rounded-lg text-primary">
+                                <span class="material-symbols-outlined">encrypted</span>
+                            </div>
+                            <div>
+                                <h5 class="font-medium">End-to-End Encryption</h5>
+                                <p class="text-xs text-on-surface-variant">Verify security protocols for archival storage</p>
+                            </div>
+                        </div>
+                        <span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform">chevron_right</span>
+                    </div>
+                    <div class="p-6 bg-surface-container-low rounded-xl flex items-center justify-between hover:bg-surface-container transition-colors cursor-pointer group">
+                        <div class="flex items-center gap-4">
+                            <div class="p-3 bg-surface-container rounded-lg text-error">
+                                <span class="material-symbols-outlined">delete_forever</span>
+                            </div>
+                            <div>
+                                <h5 class="font-medium text-error">Data Deletion</h5>
+                                <p class="text-xs text-on-surface-variant">Permanently wipe all account data and memories</p>
+                            </div>
+                        </div>
+                        <span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform">chevron_right</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Sticky Footer Actions -->
+        <div class="fixed bottom-8 right-12 flex gap-4">
+            <button class="px-8 py-3 bg-surface-container-highest text-on-surface font-medium rounded-full hover:bg-surface-bright transition-all">
+                Discard
+            </button>
+            <button class="px-10 py-3 gradient-cta text-on-primary font-bold rounded-full shadow-[0_8px_32px_rgba(177,197,255,0.2)] hover:scale-[1.02] active:scale-95 transition-all">
+                Save Changes
+            </button>
+        </div>
+    </main>
+</body>
+</html>
