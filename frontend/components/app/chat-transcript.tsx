@@ -1,0 +1,68 @@
+'use client';
+
+import { AnimatePresence, type HTMLMotionProps, motion } from 'motion/react';
+import { type ReceivedMessage, useAgent } from '@livekit/components-react';
+import { AgentChatTranscript } from '@/components/agents-ui/agent-chat-transcript';
+import { cn } from '@/lib/shadcn/utils';
+
+const MotionContainer = motion.create('div');
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const CONTAINER_MOTION_PROPS: any = {
+  variants: {
+    hidden: {
+      opacity: 0,
+      transition: {
+        ease: 'easeOut',
+        duration: 0.3,
+      },
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        delay: 0.2,
+        ease: 'easeOut',
+        duration: 0.3,
+      },
+    },
+  },
+  initial: 'hidden',
+  animate: 'visible',
+  exit: 'hidden',
+};
+
+interface ChatTranscriptProps {
+  hidden?: boolean;
+  messages?: ReceivedMessage[];
+}
+
+export function ChatTranscript({
+  hidden = false,
+  messages = [],
+  className,
+  ...props
+}: ChatTranscriptProps & Omit<HTMLMotionProps<'div'>, 'ref'>) {
+  const { state: agentState } = useAgent();
+
+  return (
+    <div className="relative flex-1 h-full w-full flex-col">
+      <AnimatePresence>
+        {!hidden && (
+          <MotionContainer
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            {...(props as any)}
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            {...(CONTAINER_MOTION_PROPS as any)}
+            className={cn('flex h-full w-full flex-col gap-4', className)}
+          >
+            <AgentChatTranscript
+              agentState={agentState}
+              messages={messages}
+              className="mx-auto w-full max-w-2xl [&_.is-user>div]:rounded-[22px] [&>div>div]:px-4 [&>div>div]:pt-40 md:[&>div>div]:px-6"
+            />
+          </MotionContainer>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}

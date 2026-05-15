@@ -1,0 +1,24 @@
+# Ignore everything in the root that shouldn't be committed
+# But allow checking into subdirectories
+
+# IDE and Claude
+.vscode/
+.idea/
+.claude/
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Env
+.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Do not ignore the backend and frontend folders
+!backend/
+!frontend/
