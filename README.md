@@ -91,6 +91,10 @@ pnpm dev
 Finally, open your browser and navigate to **http://localhost:3000** to interact with Nivora!
 
 ---
+### Nivora Landing Page Interface
+
+![Nivora Frontend Interface](./assets/frontend-landpage-image.png)
+
 ### Nivora Playground Interface image
 
 ![Nivora Frontend Interface](./assets/frontend-playground-page-image.png)
